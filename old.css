@@ -1,0 +1,218 @@
+/* ---------------------------
+Custom properties 
+----------------------------*/
+
+:root {
+    /* Color palette in rgb */
+    /* Can used with rgb() and rgba() */
+    --cornsilk: 254, 250, 224;
+    --earth-yellow: 221, 161, 94;
+    --liver-dogs: 188, 108, 37;
+    --dark-olive: 96, 108, 56;
+    --kombu-green: 40, 54, 24;
+
+    /* Font family */
+    --dm-sans: 'DM Sans', sans-serif;
+
+    /* Font sizing in rem (1.5 ratio) */
+    /* --ratio: 1.5;
+    --paragraph: 1rem;
+    --heading: calc(var(--paragraph) * var(--ratio));
+    --title: calc(var(--heading) * var(--ratio)); */
+
+    /* @link https://utopia.fyi/type/calculator?c=320,16,1.5,1280,20,1.5,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l */
+
+    --paragraph: clamp(1.00rem, calc(0.92rem + 0.42vw), 1.25rem); /* Step 0 */
+    --heading: clamp(2.25rem, calc(2.06rem + 0.94vw), 2.81rem); /* Step 2 */
+    --title: clamp(3.38rem, calc(3.09rem + 1.41vw), 4.22rem); /* Step 3 */
+
+    /* Letter spacing */
+    --ls-paragraph: -.025ch;
+    --ls-heading: -.05ch;
+
+    /* Line height */
+    --lh-heading: 1;
+
+    /* Measure */
+    --measure: 48ch;
+
+    /* Spacing (same 1.5 ratio as font sizing) */
+    /* --space-s: calc(var(--space-m) / var(--ratio));
+    --space-m: 1rem;
+    --space-l: calc(var(--space-m) * var(--ratio));
+    --space-xl: calc(var(--space-l) * var(--ratio)); */
+
+    /* @link https://utopia.fyi/space/calculator?c=320,16,1.5,1280,20,1.5,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l */
+   
+    --space-s: clamp(1.00rem, calc(0.92rem + 0.42vw), 1.25rem);
+    --space-m: clamp(1.50rem, calc(1.38rem + 0.63vw), 1.88rem);
+    --space-l: clamp(2.00rem, calc(1.83rem + 0.83vw), 2.50rem);
+    --space-xl: clamp(3.00rem, calc(2.75rem + 1.25vw), 3.75rem);
+}
+
+/* ---------------------------
+Reset https://piccalil.li/blog/a-modern-css-reset/
+----------------------------*/
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+    margin: 0;
+}
+
+/* Remove list styles on ul, ol elements */
+ul,
+ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+    scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+    min-height: 100vh;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+    max-width: 100%;
+    display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+    html:focus-within {
+        scroll-behavior: auto;
+    }
+  
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* ---------------------------
+Base
+----------------------------*/
+
+body {
+    background-color: rgb(var(--cornsilk));
+    color: rgb(var(--kombu-green));
+    font-family: var(--dm-sans);
+}
+
+/* Link styles */
+
+a,
+abbr[title] {
+    color: inherit;
+    text-underline-offset: .2em;
+}
+
+a:hover,
+a:focus,
+abbr[title]:hover,
+abbr[title]:focus {
+    text-decoration-color: rgba(var(--dark-olive), .5);
+}
+
+/* Font sizing */
+
+p {
+    font-size: var(--paragraph);
+    letter-spacing: var(--ls-paragraph);
+}
+
+h2,
+h3 {
+    font-size: var(--heading);
+    letter-spacing: var(--ls-heading);
+    line-height: var(--lh-heading);
+}
+
+h1 {
+    font-size: var(--title);
+    letter-spacing: var(--ls-heading);
+    line-height: var(--lh-heading);
+}
+
+/* Measure */
+
+* {
+    max-inline-size: var(--measure);
+}
+
+html,
+body,
+div,
+header,
+nav,
+main,
+section,
+footer {
+    max-inline-size: none;
+}
+
+/* Vertical spacing */
+
+header,
+.summary,
+.preamble,
+.explanation,
+.participation {
+    padding: var(--space-m) var(--space-s);
+}
+
+header > * + *,
+.summary > * + *,
+.preamble > * + *,
+.explanation > * + *,
+.participation > * + * {
+    margin-block-start: var(--space-m);
+}
+
+.page-wrapper > * {
+    max-width: 80rem; /* aka 1280px where the font clamp maxes out */
+    margin-inline: auto;
+}
+
