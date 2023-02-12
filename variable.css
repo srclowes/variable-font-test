@@ -1,0 +1,92 @@
+/* CSS Zen Garden with variable font */
+
+@font-face {
+  font-family: "Inter var";
+  src: url("fonts/Inter.var.woff2") format("woff2-variations");
+  font-weight: 400 800;
+}
+
+:root {
+  /* Color */
+  --off-black: #111;
+  /* Modular scale */
+  --ratio: 1.25;
+  --s0: 1rem;
+  --s1: calc(var(--s0) * var(--ratio));
+  --s2: calc(var(--s1) * var(--ratio));
+  --s3: calc(var(--s2) * var(--ratio));
+  --s4: calc(var(--s3) * var(--ratio));
+  --s5: calc(var(--s4) * var(--ratio));
+  /* Measure */
+  --measure: 50ch;
+}
+
+body {
+  font-family: "Inter var", sans-serif;
+  line-height: 1.5;
+  margin: var(--s0);
+  color: var(--off-black);
+}
+
+h3 {
+  font-size: var(--s1);
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  line-height: 1.25;
+  /* margin-block: var(--s1); */
+}
+
+h2 {
+  font-size: var(--s2);
+  font-weight: 700;
+  letter-spacing: -0.0175em;
+  line-height: 1.1;
+}
+
+h1 {
+  font-size: var(--s3);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+* {
+  max-inline-size: var(--measure);
+}
+
+html,
+body,
+div,
+header,
+nav,
+main,
+footer {
+  max-inline-size: none;
+}
+
+/* header {
+  margin-block: var(--s5);
+}
+
+header h1,
+header h2 {
+  margin: 0;
+} */
+
+/* @media (min-width: 34rem) {
+  .page-wrapper {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: var(--s2);
+  }
+
+  .intro,
+  .main {
+    grid-column: 1 / 2;
+  }
+
+  .sidebar {
+    grid-column: 2 / 3;
+    grid-row: 1 / 3;
+  }
+} */

@@ -1,0 +1,7 @@
+/* CSS Zen Garden without variable font */
+
+@font-face {
+  font-family: "Inter";
+  src: url("myfont.woff2") format("woff2"), url("myfont.woff") format("woff"),
+    url("myfont.ttf") format("truetype");
+}
