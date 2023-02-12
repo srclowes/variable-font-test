@@ -9,7 +9,7 @@
 :root {
   /* Color */
   --off-black: #111;
-  /* Modular scale */
+  /* Type scale */
   --ratio: 1.25;
   --s0: 1rem;
   --s1: calc(var(--s0) * var(--ratio));
@@ -17,12 +17,18 @@
   --s3: calc(var(--s2) * var(--ratio));
   --s4: calc(var(--s3) * var(--ratio));
   --s5: calc(var(--s4) * var(--ratio));
+  /* Letter spacing */
+  --ls0: -0.01em;
+  --ls1: calc(var(--ls0) * var(--ratio));
+  --ls2: calc(var(--ls1) * var(--ratio));
+  --ls3: calc(var(--ls2) * var(--ratio));
   /* Measure */
   --measure: 50ch;
 }
 
 body {
   font-family: "Inter var", sans-serif;
+  letter-spacing: var(--ls0);
   line-height: 1.5;
   margin: var(--s0);
   color: var(--off-black);
@@ -31,7 +37,7 @@ body {
 h3 {
   font-size: var(--s1);
   font-weight: 600;
-  letter-spacing: -0.015em;
+  letter-spacing: var(--ls1);
   line-height: 1.25;
   /* margin-block: var(--s1); */
 }
@@ -39,14 +45,14 @@ h3 {
 h2 {
   font-size: var(--s2);
   font-weight: 700;
-  letter-spacing: -0.0175em;
+  letter-spacing: var(--ls2);
   line-height: 1.1;
 }
 
 h1 {
   font-size: var(--s3);
   font-weight: 800;
-  letter-spacing: -0.02em;
+  letter-spacing: var(--ls3);
   line-height: 1;
 }
 
