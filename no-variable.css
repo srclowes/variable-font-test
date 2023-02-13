@@ -2,6 +2,74 @@
 
 @font-face {
   font-family: "Inter";
-  src: url("myfont.woff2") format("woff2"), url("myfont.woff") format("woff"),
-    url("myfont.ttf") format("truetype");
+  src: url("fonts/Inter-Regular.woff2") format("woff2");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("fonts/Inter-SemiBold.woff2") format("woff2");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("fonts/Inter-Bold.woff2") format("woff2");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("fonts/Inter-ExtraBold.woff2") format("woff2");
+  font-weight: 800;
+}
+
+:root {
+  /* Color */
+  --off-black: #111;
+  /* Type scale */
+  --ratio: 1.25;
+  --s0: 1rem;
+  --s1: calc(var(--s0) * var(--ratio));
+  --s2: calc(var(--s1) * var(--ratio));
+  --s3: calc(var(--s2) * var(--ratio));
+  /* Letter spacing */
+  --ls0: -0.01em;
+  --ls1: calc(var(--ls0) * var(--ratio));
+  --ls2: calc(var(--ls1) * var(--ratio));
+  --ls3: calc(var(--ls2) * var(--ratio));
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  letter-spacing: var(--ls0);
+  line-height: 1.5;
+  color: var(--off-black);
+  margin: var(--s0);
+}
+
+h3 {
+  font-size: var(--s1);
+  font-weight: 600;
+  letter-spacing: var(--ls1);
+  line-height: 1.25;
+}
+
+h2 {
+  font-size: var(--s2);
+  font-weight: 700;
+  letter-spacing: var(--ls2);
+  line-height: 1.1;
+}
+
+h1 {
+  font-size: var(--s3);
+  font-weight: 800;
+  letter-spacing: var(--ls3);
+  line-height: 1;
+}
+
+.page-wrapper {
+  max-inline-size: 55ch;
+  margin-inline: auto;
 }

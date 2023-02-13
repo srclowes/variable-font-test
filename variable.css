@@ -15,23 +15,19 @@
   --s1: calc(var(--s0) * var(--ratio));
   --s2: calc(var(--s1) * var(--ratio));
   --s3: calc(var(--s2) * var(--ratio));
-  --s4: calc(var(--s3) * var(--ratio));
-  --s5: calc(var(--s4) * var(--ratio));
   /* Letter spacing */
   --ls0: -0.01em;
   --ls1: calc(var(--ls0) * var(--ratio));
   --ls2: calc(var(--ls1) * var(--ratio));
   --ls3: calc(var(--ls2) * var(--ratio));
-  /* Measure */
-  --measure: 50ch;
 }
 
 body {
   font-family: "Inter var", sans-serif;
   letter-spacing: var(--ls0);
   line-height: 1.5;
-  margin: var(--s0);
   color: var(--off-black);
+  margin: var(--s0);
 }
 
 h3 {
@@ -39,7 +35,6 @@ h3 {
   font-weight: 600;
   letter-spacing: var(--ls1);
   line-height: 1.25;
-  /* margin-block: var(--s1); */
 }
 
 h2 {
@@ -56,43 +51,7 @@ h1 {
   line-height: 1;
 }
 
-* {
-  max-inline-size: var(--measure);
+.page-wrapper {
+  max-inline-size: 55ch;
+  margin-inline: auto;
 }
-
-html,
-body,
-div,
-header,
-nav,
-main,
-footer {
-  max-inline-size: none;
-}
-
-/* header {
-  margin-block: var(--s5);
-}
-
-header h1,
-header h2 {
-  margin: 0;
-} */
-
-/* @media (min-width: 34rem) {
-  .page-wrapper {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: var(--s2);
-  }
-
-  .intro,
-  .main {
-    grid-column: 1 / 2;
-  }
-
-  .sidebar {
-    grid-column: 2 / 3;
-    grid-row: 1 / 3;
-  }
-} */
