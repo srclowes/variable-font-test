@@ -33,40 +33,34 @@
   --s1: calc(var(--s0) * var(--ratio));
   --s2: calc(var(--s1) * var(--ratio));
   --s3: calc(var(--s2) * var(--ratio));
-  /* Letter spacing */
-  --ls0: -0.01em;
-  --ls1: calc(var(--ls0) * var(--ratio));
-  --ls2: calc(var(--ls1) * var(--ratio));
-  --ls3: calc(var(--ls2) * var(--ratio));
 }
 
 body {
   font-family: "Inter", sans-serif;
-  letter-spacing: var(--ls0);
   line-height: 1.5;
   color: var(--off-black);
   margin: var(--s0);
 }
 
+h3,
+h2,
+h1 {
+  line-height: var(--ratio);
+}
+
 h3 {
   font-size: var(--s1);
   font-weight: 600;
-  letter-spacing: var(--ls1);
-  line-height: 1.25;
 }
 
 h2 {
   font-size: var(--s2);
   font-weight: 700;
-  letter-spacing: var(--ls2);
-  line-height: 1.1;
 }
 
 h1 {
   font-size: var(--s3);
   font-weight: 800;
-  letter-spacing: var(--ls3);
-  line-height: 1;
 }
 
 .page-wrapper {
