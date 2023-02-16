@@ -4,6 +4,8 @@
   font-family: "Inter var";
   src: url("fonts/Inter.var.woff2") format("woff2-variations");
   font-weight: 400 800;
+  /* Hide text for up to 100ms, then only use web font if available */
+  font-display: optional;
 }
 
 :root {
