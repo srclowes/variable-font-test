@@ -9,7 +9,7 @@
 :root {
   /* Color */
   --off-black: #111;
-  /* Type scale */
+  /* Type scale (major third) */
   --ratio: 1.25;
   --s0: 1rem;
   --s1: calc(var(--s0) * var(--ratio));
@@ -21,31 +21,31 @@ body {
   font-family: "Inter var", sans-serif;
   line-height: 1.5;
   color: var(--off-black);
-  margin: var(--s0);
-}
-
-h3,
-h2,
-h1 {
-  line-height: var(--ratio);
+  margin: var(--s1);
 }
 
 h3 {
   font-size: var(--s1);
+  line-height: 1.4;
   font-weight: 600;
+  margin-block: 1.5rem 1rem;
 }
 
 h2 {
   font-size: var(--s2);
+  line-height: 1.28;
   font-weight: 700;
+  margin-block: 1.5rem;
 }
 
 h1 {
   font-size: var(--s3);
+  line-height: 1.152;
   font-weight: 800;
+  margin-block: 1.5rem;
 }
 
 .page-wrapper {
-  max-inline-size: 55ch;
+  max-inline-size: 56ch;
   margin-inline: auto;
 }
